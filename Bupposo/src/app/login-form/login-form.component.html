@@ -1,0 +1,27 @@
+<div>
+    <form [formGroup]="formdata" (ngSubmit) = "onClickSubmit(formdata.value)" >
+       <input type="text" class="fortextbox" name="emailid" placeholder="Enter your email ID" 
+          formControlName="emailid" val="=sushan@gmail.com">
+       <br/>
+       
+       <input type="password" class="fortextbox" name="passwd" 
+          placeholder="Enter your password" formControlName="passwd">
+       <br/>
+       
+       <input type="submit" [disabled] = "!formdata.valid"  class="forsubmit" value="Log In">
+    </form>
+ </div>
+ <p>
+    Email entered is : {{emailid}}
+ </p>
+ <ul class="list-unstyled list-inline mb-0">
+    <li class="list-inline-item">
+        <h5 class="mb-1">New Member Register Now!</h5>
+    </li>
+    <li class="list-inline-item">
+        <a routerLink = "registerNow"  class="btn btn-info btn-rounded" (click) = "onClickRegisterNow()" >Register Now!!</a>
+        <!-- above and below both are working 
+            ie even if you provide rotuerLink attribute in <a >as above or else call function as below
+            <a class="btn btn-info btn-rounded" (click) = "onClickRegisterNow()" >Register Now!!</a> -->
+    </li>
+</ul>

@@ -1,0 +1,48 @@
+<h2>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  Welcome! let's start finding match for you with this sign up.
+</h2>
+<div class="container">
+   <div class = "" style="max-width:500px;margin:auto;">  
+    <!-- Main component for a primary marketing message or call to action -->
+    <!-- <div class="jumbotron col-md-6"></div> -->
+      <div class="jumbotron" >
+        <form [formGroup]="registerMeForm" (ngSubmit)="createUser(registerMeForm.value)">
+          <div class="form-container">
+            <div class="">
+              <label>Your Email 
+                <input type="text" formControlName="registerEmail">
+              </label>
+              <div class="alert" *ngIf="!registerMeForm.controls['registerEmail'].valid && registerMeForm.controls['registerEmail'].touched">{{ requiredErrorMessage }}</div> 
+              <br/>
+              <label>Password
+                <input type="password" formControlName="registerPassword">
+              </label>
+              <br/>
+              <label>Create profile for
+                <input type="text" formControlName="registerCreateProfileFor">
+              </label>
+              <br/>
+              <label>Name
+                <input type="text" formControlName="registerName">
+              </label>
+              <div class="alert" *ngIf="!registerMeForm.controls['registerName'].valid && registerMeForm.controls['registerName'].touched">{{ requiredNameErrorMessage }}</div> 
+              <br/>
+              <label>Date of Birth
+                <input type="text" formControlName="registerDOB">
+              </label>
+              <br/>
+              <label>Mobile No.
+                <input type="text" formControlName="registerMobileNo">
+              </label>
+              <br/>
+              <input type="submit" class="button expanded" value="Register Me" [disabled]="!registerMeForm.valid">
+            </div>
+          </div>
+        </form>
+      </div>
+   </div> 
+</div>
+
+
+
